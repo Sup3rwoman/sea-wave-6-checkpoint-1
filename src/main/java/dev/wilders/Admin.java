@@ -1,6 +1,7 @@
 package dev.wilders;
 
 import java.time.LocalDate;
+import java.time.Period;
 
 public class Admin extends ITPerson {
 
@@ -11,6 +12,10 @@ public class Admin extends ITPerson {
         this.lastCertified = lastCertified;
     }
 
+    public LocalDate getLastCertified() {
+        return lastCertified;
+    }
+
     public void setLastCertified(LocalDate lastCertified) {
         this.lastCertified = lastCertified;
     }
@@ -18,12 +23,25 @@ public class Admin extends ITPerson {
     @Override
     public boolean hasReadAccess() {
         // Add logic to evaluate Read access for Admin here.
-        return false;
+        boolean isCertified = LocalDate.now().minusYears(1).isBefore(getLastCertified());
+
+        if(isCertified){
+            return true;
+        }else{
+            return false;
+        }
+
     }
 
     @Override
     public boolean hasWriteAccess() {
         // Add logic to evaluate Write access for Admin here.
-        return false;
+        boolean isCertified = LocalDate.now().minusYears(1).isBefore(getLastCertified());
+
+        if(isCertified){
+            return true;
+        }else{
+            return false;
+        }
     }
 }
