@@ -1,65 +1,72 @@
 Q: What is the default branch of a git repository called?
-A:
+A: master/main
 
 Q: How do you change branches using git?
-A:
+A: git checkout <branchname>
 
 Q: What is the command that allows you to create a local repository from a remote repository?
-A:
+A: git clone <URLFROMGITHUB>
 
 Q: How do you check the status of the working directory of the local repository?
-A:
+A: git status
 
 Q: What sequence of commands allows me to share new changes in a local repository with an (already configured) remote repository?
-A:
+A: git push <REMOTENAME> <BRANCH>
+   bzw. git push origin
 
 Q: What is the value of the expression (true && false)?
-A:
+A: false
 
 Q: How can you write `i = i + 1` more concisely?
-A:
+A: i++;
 
 Q: What does the term "concatenation" mean?
-A:
+A: you can concat multiple strings, using the '+', example: "Hello" + "World"
 
 Q: Why is the check for "equals" with (object == object) not reliable? What should you use for check of equal objects?
-A:
+A: you can use == only with primitive datatypes. If you use it with objects, you would only compare the references of the objects.
+   Correct would be: object1.equals(object2)
 
 Q: What Collection implementation is ordered, but not sorted?
-A:
+A: List
 
 Q: What Collection implementation has only unique elements?
-A:
+A: Set
 
 Q: How can we find out the number of elements of an array named "students"?
-A:
+A: students.length()
 
 Q: How can we find out the number of elements of a list named "students"?
-A:
+A: students.size()
 
 Q: In Java, what happens if I divide by Zero (eg. 8 / 0)?
-A:
+A: an Exception is thrown (ArithmeticException), the program would be canceled
 
 Q: How can you check if File quiz = new File("quiz.txt") exists?
-A:
+A: if(quiz.exists()){ do something }
 
 Q: Depending on some attributes, an object should return isAllowed(). Should the method be static or not, why?
-A:
+A: A static method can be executed without creating an object beforehand. The method call would be done directly via the class (ClassName.isAllowed()).
+   If an object should call isAllowed(), the method shouldn't be static.
 
 Q: What is the signature of the `main` method of a class?
-A:
+A: public static void main(String[] args) {}
 
 Q: What is an instance of a class?
-A:
+A: an object is an instance of a class.
 
 Q: Which naming rule should you apply to the naming of a class?
-A:
+A: CamelCase, Starts with uppercase letter, Noun
 
 Q: Why should the usage of java.util.Date be avoided?
-A:
+A: For example: It's hard to compare 2 dates. Date uses the Unix timestamp. Even if we would compare the date of the same day (d1 == d2),
+   we would get a 'false', because of the different timestamp.
+   LocalDate is the new API. Its easier and has more features like add or substract Days, Months or years.
+   It even has its own parsing or formatting methods.
 
 Q: What Java class do you use to store the Date "31.10.2021"?
-A:
+A: LocalDate myDate = LocalDate.parse("31.10.2021");
 
 Q: What is the advantage of using Generics?
-A:
+A: you can create one list for different kind of objects instead of programming different lists for each object
+
